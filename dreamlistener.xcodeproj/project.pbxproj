@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0675409D1EC756D600029A2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675409C1EC756D600029A2F /* AppDelegate.swift */; };
-		0675409F1EC756D600029A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675409E1EC756D600029A2F /* ViewController.swift */; };
+		0675409F1EC756D600029A2F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675409E1EC756D600029A2F /* MainVC.swift */; };
 		067540A21EC756D600029A2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067540A01EC756D600029A2F /* Main.storyboard */; };
 		067540A51EC756D600029A2F /* dreamlistener.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 067540A31EC756D600029A2F /* dreamlistener.xcdatamodeld */; };
 		067540A71EC756D600029A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 067540A61EC756D600029A2F /* Assets.xcassets */; };
@@ -21,12 +21,15 @@
 		067540BE1EC7772000029A2F /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067540B61EC7772000029A2F /* Store+CoreDataProperties.swift */; };
 		067540BF1EC7772000029A2F /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067540B71EC7772000029A2F /* Image+CoreDataClass.swift */; };
 		067540C01EC7772000029A2F /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067540B81EC7772000029A2F /* Image+CoreDataProperties.swift */; };
+		067540C41EC786EB00029A2F /* domo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 067540C31EC786EB00029A2F /* domo.jpg */; };
+		067540C71EC788B600029A2F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067540C61EC788B600029A2F /* MaterialView.swift */; };
+		067540C91EC78D3B00029A2F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067540C81EC78D3B00029A2F /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		067540991EC756D600029A2F /* dreamlistener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamlistener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0675409C1EC756D600029A2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0675409E1EC756D600029A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0675409E1EC756D600029A2F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		067540A11EC756D600029A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		067540A41EC756D600029A2F /* dreamlistener.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dreamlistener.xcdatamodel; sourceTree = "<group>"; };
 		067540A61EC756D600029A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		067540B61EC7772000029A2F /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		067540B71EC7772000029A2F /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
 		067540B81EC7772000029A2F /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		067540C31EC786EB00029A2F /* domo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = domo.jpg; sourceTree = "<group>"; };
+		067540C61EC788B600029A2F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		067540C81EC78D3B00029A2F /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +78,13 @@
 		0675409B1EC756D600029A2F /* dreamlistener */ = {
 			isa = PBXGroup;
 			children = (
+				067540C51EC787AA00029A2F /* View */,
 				067540C11EC7779D00029A2F /* Model */,
 				0675409C1EC756D600029A2F /* AppDelegate.swift */,
-				0675409E1EC756D600029A2F /* ViewController.swift */,
+				0675409E1EC756D600029A2F /* MainVC.swift */,
 				067540A01EC756D600029A2F /* Main.storyboard */,
 				067540A61EC756D600029A2F /* Assets.xcassets */,
+				067540C31EC786EB00029A2F /* domo.jpg */,
 				067540A81EC756D600029A2F /* LaunchScreen.storyboard */,
 				067540AB1EC756D600029A2F /* Info.plist */,
 				067540A31EC756D600029A2F /* dreamlistener.xcdatamodeld */,
@@ -105,6 +113,15 @@
 				067540B81EC7772000029A2F /* Image+CoreDataProperties.swift */,
 			);
 			name = generated;
+			sourceTree = "<group>";
+		};
+		067540C51EC787AA00029A2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				067540C61EC788B600029A2F /* MaterialView.swift */,
+				067540C81EC78D3B00029A2F /* ItemCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +186,7 @@
 			files = (
 				067540AA1EC756D600029A2F /* LaunchScreen.storyboard in Resources */,
 				067540A71EC756D600029A2F /* Assets.xcassets in Resources */,
+				067540C41EC786EB00029A2F /* domo.jpg in Resources */,
 				067540A21EC756D600029A2F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,9 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067540C91EC78D3B00029A2F /* ItemCell.swift in Sources */,
 				067540BB1EC7772000029A2F /* ItemType+CoreDataClass.swift in Sources */,
 				067540A51EC756D600029A2F /* dreamlistener.xcdatamodeld in Sources */,
-				0675409F1EC756D600029A2F /* ViewController.swift in Sources */,
+				0675409F1EC756D600029A2F /* MainVC.swift in Sources */,
+				067540C71EC788B600029A2F /* MaterialView.swift in Sources */,
 				067540B91EC7772000029A2F /* Item+CoreDataClass.swift in Sources */,
 				067540BE1EC7772000029A2F /* Store+CoreDataProperties.swift in Sources */,
 				0675409D1EC756D600029A2F /* AppDelegate.swift in Sources */,
