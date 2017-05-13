@@ -12,9 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    
-        //7 vi hatar gnaget från solna vi hatar aik vi hatar aporna från djurgårn försvinn fort härifrån horungar
+     
     
     }
 
