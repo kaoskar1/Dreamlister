@@ -3,7 +3,7 @@
     <entity name="Image" representedClassName=".Image" syncable="YES">
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="toItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="toImage" inverseEntity="Item" syncable="YES"/>
-        <relationship name="toStore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Store" inverseName="toImage" inverseEntity="Store" syncable="YES"/>
+        <relationship name="toStore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Store" inverseName="toImage" inverseEntity="Store" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName=".Item" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -21,12 +21,12 @@
     <entity name="Store" representedClassName=".Store" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toStore" inverseEntity="Image" syncable="YES"/>
-        <relationship name="toItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="toStore" inverseEntity="Item" syncable="YES"/>
+        <relationship name="toItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="toStore" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="Image" positionX="-54" positionY="18" width="128" height="90"/>
-        <element name="Store" positionX="-36" positionY="27" width="128" height="90"/>
-        <element name="ItemType" positionX="-18" positionY="36" width="128" height="75"/>
+        <element name="Item" positionX="-587" positionY="-477" width="128" height="150"/>
+        <element name="Image" positionX="-236" positionY="-106" width="128" height="88"/>
+        <element name="Store" positionX="-540" positionY="-90" width="128" height="88"/>
+        <element name="ItemType" positionX="-254" positionY="-396" width="128" height="75"/>
     </elements>
 </model>
