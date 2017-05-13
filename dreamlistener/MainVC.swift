@@ -8,19 +8,36 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segment: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     // heja oskar
+
+   
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        
+    }
+   
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         return  UITableViewCell()
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+            return 0
     }
-
-
+   
+    
+    
 }
 
