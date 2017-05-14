@@ -81,7 +81,7 @@
 				067540C51EC787AA00029A2F /* View */,
 				067540C11EC7779D00029A2F /* Model */,
 				0675409C1EC756D600029A2F /* AppDelegate.swift */,
-				0675409E1EC756D600029A2F /* MainVC.swift */,
+				067540CA1EC8233B00029A2F /* Controller */,
 				067540A01EC756D600029A2F /* Main.storyboard */,
 				067540A61EC756D600029A2F /* Assets.xcassets */,
 				067540C31EC786EB00029A2F /* domo.jpg */,
@@ -122,6 +122,14 @@
 				067540C81EC78D3B00029A2F /* ItemCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		067540CA1EC8233B00029A2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0675409E1EC756D600029A2F /* MainVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +380,7 @@
 				067540B01EC756D600029A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

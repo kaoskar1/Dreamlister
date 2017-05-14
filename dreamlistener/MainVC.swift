@@ -22,7 +22,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        generatedTestData()
         attemtFetch()
     }
     
@@ -97,9 +97,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType,newIndexPath: IndexPath?) {
-        
-        
-        
+
         switch (type) {
             case.insert:
                 if let indexPath = newIndexPath {
@@ -129,4 +127,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             break
         }
     }
+
+    func generatedTestData() {
+        let item = Item(context: context)
+        item.title = "MCBPRO"
+        item.price = 1800
+        item.details = "ey jag behöver en ny dator så ge mig en bror"
+        
+        
+        let item2 = Item(context: context)
+        item2.title = "ratchet and clank"
+        item2.price = 50
+        item2.details = "jag vill lira tvspekl jy"
+        
+        let item3 = Item(context: context)
+        item3.title = "drone"
+        item3.price = 500
+        item3.details = "ey jag behöver en drone"
+        
+        
+        ad.saveContext()
+    
+    }
+
 }
