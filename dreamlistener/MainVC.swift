@@ -43,6 +43,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     }
 
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let  objs = controller.fetchedObjects , objs.count > 0 {
+       
+            
+                let item = objs[indexPath.row]
+                performSegue(withIdentifier: "ItemDetailVC", sender: item)
+            }
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ItemDetailVC" {
+            if let destination = segue.destination as? ItemDetailsVC {
+            if let item = sender as? Item {
+                destination.itemToEdit = item
+                    }
+        
+                }
+            }
+        }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
             let sectionInfo = sections[section]
@@ -64,6 +85,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+  
     
     func attemtFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -72,7 +94,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        controller.delegate = self 
+        controller.delegate = self
         
         self.controller = controller
         
