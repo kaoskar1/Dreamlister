@@ -9,12 +9,8 @@
 import UIKit
 import CoreData
 
-
-
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
-    
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
     
@@ -27,22 +23,46 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.dataSource = self
         tableView.delegate = self
         
-        
-        
-        
-        
+        attemtFetch()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return  UITableViewCell()
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        as! ItemCell
+        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        return  cell
     }
     
+    
+    func configureCell(cell: ItemCell, indexPath: NSIndexPath){
+        let item = controller.object(at: indexPath as IndexPath)
+        cell.configureCell(item: item)
+        
+    
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if let sections = controller.sections {
+            let sectionInfo = sections[section]
+                return sectionInfo.numberOfObjects
+        
+        }
+          return 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = controller.sections{
+            return sections.count
+        }
+        
         return 0
+
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     func attemtFetch() {
@@ -53,6 +73,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
+        self.controller = controller
         
         do{
             try  controller.performFetch()
@@ -94,6 +115,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case.update:
             if let indexPath = indexPath{
             let cell = tableView.cellForRow(at: indexPath) as! ItemCell
+                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
                 break
         case.move:
