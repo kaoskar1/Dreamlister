@@ -97,7 +97,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         var  item:  Item!
         let pitcure = Image(context: context)
         pitcure.image = thumbImage.image
-    
+        
 
         
         if itemToEdit == nil {
