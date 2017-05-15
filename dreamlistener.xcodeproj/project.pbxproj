@@ -87,7 +87,6 @@
 				067540CA1EC8233B00029A2F /* Controller */,
 				0675409C1EC756D600029A2F /* AppDelegate.swift */,
 				067540A01EC756D600029A2F /* Main.storyboard */,
-				067540CF1EC834E700029A2F /* CustomTextField.swift */,
 				067540A61EC756D600029A2F /* Assets.xcassets */,
 				067540C31EC786EB00029A2F /* domo.jpg */,
 				067540A81EC756D600029A2F /* LaunchScreen.storyboard */,
@@ -123,6 +122,7 @@
 		067540C51EC787AA00029A2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				067540CF1EC834E700029A2F /* CustomTextField.swift */,
 				067540C61EC788B600029A2F /* MaterialView.swift */,
 				067540C81EC78D3B00029A2F /* ItemCell.swift */,
 			);

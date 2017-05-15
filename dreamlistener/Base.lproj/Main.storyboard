@@ -160,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redPanda" translatesAutoresizingMaskIntoConstraints="NO" id="0Nk-3g-PS4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redPanda" translatesAutoresizingMaskIntoConstraints="NO" id="0Nk-3g-PS4">
                                 <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3mu-MH-dwy"/>
@@ -173,6 +173,9 @@
                                     <constraint firstAttribute="height" constant="100" id="9jg-9c-r5g"/>
                                     <constraint firstAttribute="width" constant="100" id="fAb-sJ-r2m"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="pOg-r1-k10" eventType="touchUpInside" id="azE-w9-uyc"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qw7-jA-xBy" customClass="CustomTextField" customModule="dreamlistener" customModuleProvider="target">
                                 <rect key="frame" x="124" y="82" width="235" height="41"/>
@@ -287,12 +290,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="H11-Br-zTc">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="RYH-7o-Wni">
                             <color key="tintColor" red="0.68235294120000001" green="0.28627450980000002" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="pOg-r1-k10" id="YjV-We-mcA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detialsField" destination="PcN-C1-NOU" id="71e-CB-D4E"/>
                         <outlet property="priceField" destination="B00-Xp-CdC" id="xiA-5w-wCE"/>
                         <outlet property="storePicker" destination="TZV-Qk-7EP" id="8eu-cU-WJp"/>
+                        <outlet property="thumbImage" destination="0Nk-3g-PS4" id="z9p-a5-cSp"/>
                         <outlet property="titleField" destination="Qw7-jA-xBy" id="fT8-Ez-UDD"/>
                     </connections>
                 </viewController>
